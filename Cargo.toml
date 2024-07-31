@@ -1,0 +1,32 @@
+[package]
+name = "wall"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+ethabi = "18.0.0"
+libsecp256k1 = "0.7.1"
+ethereum-types = "0.13.1"
+digest = "0.10.7"
+hex = "0.4.2"
+rand = "0.8.5"
+serde = { version = "1.0", features=["derive"] }
+serde_json = "1.0"
+thiserror = "1.0"
+anyhow = "1.0"
+libaes = "0.7.0"
+sha2 = "0.10.8"
+protobuf = "=3.4.0"
+anychain-core = "0.1.6"
+anychain-kms = "0.1.8"
+anychain-ethereum = "0.1.14"
+bs58 = "0.5.1"
+neon = { version = "0.10", optional = true, features = ["napi-6"], default-features = false }
+
+[features]
+default = ["cbinding"]
+cbinding = []
+napi = ["neon"]
+
+[build-dependencies]
+cbindgen = "0.24.3"
